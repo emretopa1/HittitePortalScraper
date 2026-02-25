@@ -109,7 +109,7 @@ HittitePortalScraper/
 ├── HittitePortalScraper/
 │   ├── HittitePortalScraper.csproj
 │   ├── Program.cs              # Main application logic
-│   └── ImageDownloader.cs      # Image scraping utilities
+│   └── RestSharpLinks.cs       # Image scraping utilities
 ├── images/                     # Downloaded images (created at runtime)
 ├── Dockerfile
 ├── docker-compose.yml
