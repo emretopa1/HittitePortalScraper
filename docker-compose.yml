@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  hittite-scraper:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: hittite-portal-scraper
+    image: hittite-scraper:latest
+    
+    # Volume mount for persistent image storage
+    volumes:
+      - ./images:/app/images
+    
+    # Resource limits
+    deploy:
+      resources:
+        limits:
+          cpus: '2.0'
+          memory: 4G
+        reservations:
+          cpus: '1.0'
+          memory: 2G
+    
+    # Restart policy
+    restart: unless-stopped
+    
+    # Environment variables (optional)
+    environment:
+      - DOTNET_EnableDiagnostics=0
+      - ASPNETCORE_ENVIRONMENT=Production
+    
+    # Logging configuration
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"

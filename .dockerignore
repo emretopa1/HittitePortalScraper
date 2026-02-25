@@ -1,0 +1,64 @@
+# Build outputs
+**/bin/
+**/obj/
+**/out/
+
+# NuGet packages
+**/*.nupkg
+**/packages/
+
+# Visual Studio files
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Test results
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
+*.trx
+
+# Git
+.git/
+.gitignore
+.gitattributes
+
+# Documentation
+*.md
+!README.md
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Downloaded images (will be generated)
+images/
+*.jpg
+*.jpeg
+*.png
+*.gif
+
+# Logs
+*.log
+logs/
+
+# Docker files (don't copy into image)
+Dockerfile*
+docker-compose*
+.dockerignore
+
+# CI/CD
+.github/
+.gitlab-ci.yml
+azure-pipelines.yml
+
+# Playwright
+.playwright/
