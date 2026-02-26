@@ -134,7 +134,6 @@ namespace Test
                 var listLinks = new List<string>();
                 foreach (var link in links)
                 {
-                    //var linkTam = "https://www.hethport.adwmainz.de/fotarch/" + link;
 
                     var uri = new Uri("https://dummy.com/" + link);
 
@@ -151,19 +150,7 @@ namespace Test
                     var client = new RestClient(options);
                     var request1 = new RestRequest("fotarch/bildausw2.php", Method.Get);
                     request1.AddQueryParameter("n", fundnr);
-                    //request1.AddQueryParameter("x", token);
                     var response1 = await client.ExecuteAsync(request1);
-
-                    //var match = Regex.Match(response1.Content, @"x=([a-f0-9]+)");
-                    //string token = match.Groups[1].Value;
-
-
-                    //var request2 = new RestRequest("fotarch/bildausw2.php", Method.Get);
-                    //request2.AddQueryParameter("n", "2018/g");
-                    ////request2.AddQueryParameter("x", token);
-
-                    //var response2 = await client.ExecuteAsync(request2);
-
                     var responseUrl = response1.ResponseUri.ToString();
                     listLinks.Add(responseUrl);
                 }
